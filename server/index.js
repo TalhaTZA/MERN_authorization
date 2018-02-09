@@ -4,7 +4,11 @@ const bodyParser=require('body-parser');
 const morgan=require('morgan');
 const app=express();
 const router=require('./router');
+const mongoose=require('mongoose');
 
+
+//DB SETUP
+mongoose.connect('mongodb://localhost:auth/auth');
 
 //APP SETUP
 app.use(morgan('combined'));
