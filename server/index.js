@@ -8,7 +8,9 @@ const mongoose=require('mongoose');
 
 
 //DB SETUP
-mongoose.connect('mongodb://localhost:auth/auth');
+mongoose.connect('mongodb://localhost/auth',null,function(err){
+    console.log(err);
+});
 
 //APP SETUP
 app.use(morgan('combined'));
