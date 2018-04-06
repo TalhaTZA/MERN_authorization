@@ -9,7 +9,7 @@ const requireLocal=passport.authenticate('local',{session:false});
 module.exports=function(app){
 
     app.get('/',reuireAuth,function(req,res,next){
-        res.send({hi:'Hello'});
+        res.send({message:'Super Secret code is ABC123'});
     })
 
     app.post('/signin',requireLocal,Authentication.signin);
