@@ -14,9 +14,9 @@ const createStoreWithMiddleware = applyMiddleware(ReduxThunk)(createStore);
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <Router history={browserHistory}>
-      <Route path='/' component={App}/>
+      <Route path='/' component={App}>
       <Route path='signin' component={SignIn}/>
-      
+      </Route>
     </Router>
   </Provider>
   , document.querySelector('.container'));
