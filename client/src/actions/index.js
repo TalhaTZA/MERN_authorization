@@ -1,6 +1,6 @@
 import axios from 'axios'; 
 import {browserHistory} from 'react-router';
-import {AUTH_USER} from './types';
+import {AUTH_USER,AUTH_ERROR} from './types';
 
 const ROOT_URL='http://localhost:4000';
 
@@ -13,7 +13,14 @@ export function signin({email,password}){
                 browserHistory.push('/feature');
             })
             .catch(()=>{
-
+                dispatch(autherror('Bad Login Info'));
             });
+    };
+};
+
+export function autherror(error){
+    return{
+        type: AUTH_ERROR,
+        payload: error
     };
 };
