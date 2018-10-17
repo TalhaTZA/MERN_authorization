@@ -1,0 +1,14 @@
+import React , {Component} from 'react';
+
+class Feature extends Component{
+
+    render(){
+        return(
+            <div>
+                This is a feature route
+            </div>
+        );
+    };
+};
+
+export default Feature;
